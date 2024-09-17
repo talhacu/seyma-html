@@ -6,18 +6,22 @@
     <title>Özellikler ve Değerlendirmeler</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
         }
         .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
             text-align: center;
         }
         .button {
             display: block;
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             padding: 10px;
             margin: 10px auto;
             background-color: #f69021;
@@ -31,16 +35,19 @@
         .content {
             display: none;
             margin: 10px 0;
-
         }
-
         caption {
-            margin-bottom: 10px; /* Caption altına boşluk ekle */
-            font-weight: bold; /* Caption'u bold yap */
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-
         table {
-            margin: 20px auto; /* Tabloları ortala ve aralarına boşluk ekle */
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
         }
         .review {
             border: 1px solid #ddd;
@@ -57,7 +64,9 @@
         }
         .sample-photo {
             margin: 10px 0;
-            width: 30%;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
         }
         ul {
             text-align: left;
@@ -66,11 +75,25 @@
         li {
             margin-bottom: 5px;
         }
+        @media (max-width: 600px) {
+            .button {
+                width: 100%;
+                max-width: none;
+            }
+            .sample-photo {
+                width: 100%;
+                max-width: none;
+            }
+            table {
+                width: 100%;
+                max-width: none;
+            }
+        }
     </style>
     <script>
         function toggleContent(id) {
             var content = document.getElementById(id);
-            if (content.style.display === "none") {
+            if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
             } else {
                 content.style.display = "none";
@@ -107,7 +130,7 @@
 
         <button class="button" onclick="toggleContent('content2')">Materyal ve Ölçüler</button>
         <div id="content2" class="content">
-            <table border="1">
+            <table>
                 <caption>Canyon Travel Sistem Bebek Arabası V2</caption>
                 <tr>
                     <th>Özellik</th>
@@ -129,10 +152,8 @@
                     <td>Ürün Ağırlığı</td>
                     <td>11.5 kg</td>
                 </tr>
-
-
             </table>
-            <table border="1">
+            <table>
                 <caption>baby&plus; Canyon Travel Sistem Ana Kucağı V2</caption>
                 <tr>
                     <th>Özellik</th>
@@ -155,7 +176,7 @@
 
         <button class="button" onclick="toggleContent('content3')">Kullanım Videosu</button>
         <div id="content3" class="content">
-            <video width="640" height="360" controls>
+            <video width="100%" height="auto" controls>
                 <source src="video.mp4" type="video/mp4">
                 Tarayıcınız video etiketini desteklemiyor.
             </video>
@@ -164,60 +185,59 @@
         <button class="button" onclick="toggleContent('content4')">Değerlendirmeler</button>
         <div id="content4" class="content">
             <div class="review">
-    <div class="info">
-        <strong>D*** K***</strong> <span class="date">08/08/2024</span> <div class="stars">★★★★☆</div>
-    </div>
-    <div class="comment">Hızlı geldi kurulumunda biraz zorlandık kitapçık yardımcı oluyor ama yeterli değil resimdeki gibi mağazada görüp beğenmiştik biz sitesinden almak istedik sorunsuz elimize ulaştı.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>Tuğçe Gürsoy</strong> <span class="date">06/08/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Tek kelimeyle Harika bir bebek arabası.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>Sibel Çevik</strong> <span class="date">04/08/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Mükemmel kullanışlı.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>Gülşah Yurt</strong> <span class="date">18/07/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Çok beğenerek aldım çok kullanışlı her açıdan.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>Cihan Güney</strong> <span class="date">10/07/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Ürünün gerçekten çok kaliteli ve sağlam. Uzun yıllar kullanabilirsiniz. Sadece UPS kargo firması biraz geciktirdi o kadar.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>K*** D***</strong> <span class="date">02/06/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Görüntüsü güzel kurulumu kolay gayet şık bebeğimin de beğeneceğini düşünüyorum.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>D*** M***</strong> <span class="date">19/04/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Ben beğendim sadece biraz kaba ama güvenlikli olduğunu düşünüyorum.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>Özlem Taze</strong> <span class="date">12/04/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Bebek arabamın kalitesi çok iyi. Ordu şubesinde bebek arabası almak için gitmiştik, orda beğendiğimiz modelin paketli ürünü yoktu. En yakın Giresun şubesinde varmış, oraya gidip ordan aldık. O kadar kaliteliki kurulumu da bir o kadar kolay... teşekkürler E bebek.</div>
-</div>
-<div class="review">
-    <div class="info">
-        <strong>Esin Kırca</strong> <span class="date">08/04/2024</span> <div class="stars">★★★★★</div>
-    </div>
-    <div class="comment">Pahalı arabaları almaya gerek yok bunu çok beğendim.</div>
-</div>
-
+                <div class="info">
+                    <strong>D*** K***</strong> <span class="date">08/08/2024</span> <div class="stars">★★★★☆</div>
+                </div>
+                <div class="comment">Hızlı geldi kurulumunda biraz zorlandık kitapçık yardımcı oluyor ama yeterli değil resimdeki gibi mağazada görüp beğenmiştik biz sitesinden almak istedik sorunsuz elimize ulaştı.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>Tuğçe Gürsoy</strong> <span class="date">06/08/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Tek kelimeyle Harika bir bebek arabası.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>Sibel Çevik</strong> <span class="date">04/08/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Mükemmel kullanışlı.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>Gülşah Yurt</strong> <span class="date">18/07/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Çok beğenerek aldım çok kullanışlı her açıdan.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>Cihan Güney</strong> <span class="date">10/07/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Ürünün gerçekten çok kaliteli ve sağlam. Uzun yıllar kullanabilirsiniz. Sadece UPS kargo firması biraz geciktirdi o kadar.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>K*** D***</strong> <span class="date">02/06/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Görüntüsü güzel kurulumu kolay gayet şık bebeğimin de beğeneceğini düşünüyorum.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>D*** M***</strong> <span class="date">19/04/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Ben beğendim sadece biraz kaba ama güvenlikli olduğunu düşünüyorum.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>Özlem Taze</strong> <span class="date">12/04/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Bebek arabamın kalitesi çok iyi. Ordu şubesinde bebek arabası almak için gitmiştik, orda beğendiğimiz modelin paketli ürünü yoktu. En yakın Giresun şubesinde varmış, oraya gidip ordan aldık. O kadar kaliteliki kurulumu da bir o kadar kolay... teşekkürler E bebek.</div>
+            </div>
+            <div class="review">
+                <div class="info">
+                    <strong>Esin Kırca</strong> <span class="date">08/04/2024</span> <div class="stars">★★★★★</div>
+                </div>
+                <div class="comment">Pahalı arabaları almaya gerek yok bunu çok beğendim.</div>
+            </div>
         </div>
     </div>
 </body>
